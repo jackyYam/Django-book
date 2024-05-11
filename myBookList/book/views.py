@@ -19,7 +19,6 @@ class IsCreator(permissions.BasePermission):
     """
     def has_object_permission(self, request, view, obj):
         # Write permissions are only allowed to the creator of the book.
-        print(obj.creator, request.user)
         return obj.creator == request.user
     
 class BookListCreateView(generics.ListCreateAPIView):
